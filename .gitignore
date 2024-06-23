@@ -1,0 +1,17 @@
+# all ignore
+/*
+
+# not ignore
+!nvim
+nvim/.*
+
+!tmux/
+tmux/*
+!tmux/tmux.conf
+
+!karabiner/
+karabiner/*
+!karabiner/karabiner.json
+
+**/.gitignore
+!/.gitignore

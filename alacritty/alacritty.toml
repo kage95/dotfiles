@@ -1,0 +1,78 @@
+[env]
+TERM = "alacritty"
+
+# ============================================
+# SHELL
+# ============================================
+[shell]
+program = "/bin/zsh"
+args = [
+  "-l",
+  "-c",
+  "/opt/homebrew/bin/tmux a -t main || /opt/homebrew/bin/tmux new -s main",
+]
+
+# ============================================
+# WINDOW
+# ============================================
+[window]
+dynamic_title = true
+decorations = "Buttonless"
+startup_mode =  "Fullscreen"
+
+[window.dimensions]
+columns = 150
+lines = 60
+
+[window.padding]
+x = 2
+y = 2
+
+[window.position]
+x = 0
+y = 0
+
+# ============================================
+# CURSOR
+# ============================================
+[cursor]
+blink_interval = 400
+
+[cursor.style]
+blinking = "Always"
+
+[cursor.vi_mode_style]
+shape="Underline"
+
+# ============================================
+# FONT
+# ============================================
+[font]
+size = 16
+
+[font.offset]
+x = 0
+y = 0
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.normal]
+family = "Hack Nerd Font"
+
+# ============================================
+# MOUSE
+# ============================================
+[mouse]
+hide_when_typing = true
+
+# ============================================
+# KEYBOARD
+# ============================================
+[keyboard]
+bindings = [
+  { key = "Q", mods = "Command", action="None" },
+  { key = "W", mods = "Command", action="None" },
+  { key = "V", mods = "Command", action="Paste" },
+]
