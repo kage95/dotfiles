@@ -45,6 +45,9 @@ keymap.set(
   { desc = "ディレクトリでbufferを並び替え" }
 )
 
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "上の行と入れ替え" })
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "下の行と入れ替え" })
+
 -- デフォルトのterminalを開くコマンドを無効
 disable_keymap("n", "<leader>ft")
 disable_keymap("n", "<leader>fT")
