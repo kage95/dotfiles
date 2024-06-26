@@ -48,7 +48,7 @@ shape="Underline"
 # FONT
 # ============================================
 [font]
-size = 16
+size = 15
 
 [font.offset]
 x = 0
