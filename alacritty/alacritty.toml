@@ -75,4 +75,5 @@ bindings = [
   { key = "Q", mods = "Command", action="None" },
   { key = "W", mods = "Command", action="None" },
   { key = "V", mods = "Command", action="Paste" },
+  { key = "Slash", mods = "Control", chars = "\u001f" },
 ]

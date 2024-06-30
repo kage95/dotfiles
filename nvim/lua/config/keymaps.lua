@@ -25,6 +25,12 @@ keymap.set("i", "<C-e>", "<C-o>$", { silent = true })
 keymap.set("i", ",", ",<Space>")
 
 -- Terminal
+-- デフォルトのterminalを開くコマンドを無効
+disable_keymap("n", "<leader>ft")
+disable_keymap("n", "<leader>fT")
+disable_keymap("n", "<C-_>")
+
+keymap.set("n", "<C-_>", "<CMD>ToggleTerm<CR>", { desc = "Open Terminal", silent = true })
 keymap.set("n", "<Leader>ts", "<CMD>TermSelect<CR>", { desc = "Select Terminal List", silent = true })
 keymap.set("n", "<Leader>tm", "<CMD>1ToggleTerm name=Main<CR>", { desc = "Main Terminal", silent = true })
 keymap.set("n", "<Leader>tt", "<CMD>2TermExec name=Test<CR>", { desc = "Test Terminal", silent = true })
@@ -44,10 +50,6 @@ keymap.set(
   "<CMD>BufferLineSortByDirectory<CR>",
   { desc = "ディレクトリでbufferを並び替え" }
 )
-
--- デフォルトのterminalを開くコマンドを無効
-disable_keymap("n", "<leader>ft")
-disable_keymap("n", "<leader>fT")
 
 disable_keymap("t", "<C-h>")
 disable_keymap("t", "<C-j>")
