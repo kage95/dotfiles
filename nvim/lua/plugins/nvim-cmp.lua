@@ -1,3 +1,31 @@
+local cmp_kinds = {
+  Text = "  ",
+  Method = "  ",
+  Function = "  ",
+  Constructor = "  ",
+  Field = "  ",
+  Variable = "  ",
+  Class = "  ",
+  Interface = "  ",
+  Module = "  ",
+  Property = "  ",
+  Unit = "  ",
+  Value = "  ",
+  Enum = "  ",
+  Keyword = "  ",
+  Snippet = "  ",
+  Color = "  ",
+  File = "  ",
+  Reference = "  ",
+  Folder = "  ",
+  EnumMember = "  ",
+  Constant = "  ",
+  Struct = "  ",
+  Event = "  ",
+  Operator = "  ",
+  TypeParameter = "  ",
+}
+
 return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
@@ -5,13 +33,14 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
+    "zbirenbaum/copilot-cmp",
   },
   opts = function()
     local cmp = require("cmp")
 
     return {
       completion = {
-        completeopt = "menu,menuone", -- menu,menuone,noselect
+        completeopt = "menu,menuone,noselect", -- menu,menuone,noselect
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -22,23 +51,21 @@ return {
         { name = "nvim_lsp" },
         { name = "path" },
       }, {
+        { name = "copilot" },
         { name = "buffer" },
       }),
       formatting = {
-        format = function(_, item)
-          local icons = require("lazyvim.config").icons.kinds
-          if icons[item.kind] then
-            item.kind = icons[item.kind] .. item.kind
-          end
-          return item
+        format = function(_, vim_item)
+          vim_item.kind = (cmp_kinds[vim_item.kind] or "") .. vim_item.kind
+          vim_item.menu = ""
+          return vim_item
         end,
       },
-      -- experimental = {
-      --   ghost_text = {
-      --     hl_group = "CmpGhostText",
-      --   },
-      -- },
-      -- sorting = defaults.sorting,
+      view = {
+        docs = {
+          auto_open = false,
+        },
+      },
     }
   end,
 }

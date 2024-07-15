@@ -3,7 +3,7 @@ return {
   init = function()
     local keys = require("lazyvim.plugins.lsp.keymaps").get()
     keys[#keys + 1] = { "K", "<CMD>Lspsaga hover_doc<CR>", { desc = "Hover" } }
-    keys[#keys + 1] = { "<Leader>cd", "<CMD>Lspsaga show_line_diagnostics<CR>", { desc = "Show Line Diagnostics" } }
+    keys[#keys + 1] = { "cd", "<CMD>Lspsaga show_line_diagnostics<CR>", { desc = "Show Line Diagnostics" } }
   end,
   opts = {
     diagnostics = {

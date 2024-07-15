@@ -5,7 +5,7 @@ return {
   opts = {
     suggestion = {
       enabled = true,
-      auto_trigger = false,
+      auto_trigger = true,
       keymap = {
         accept = "<Tab>",
         accept_word = false,

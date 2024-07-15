@@ -16,5 +16,9 @@ tmux/*
 karabiner/*
 !karabiner/karabiner.json
 
+!lazygit
+lazygit/.*
+lazygit/state.yml
+
 **/.gitignore
 !/.gitignore
