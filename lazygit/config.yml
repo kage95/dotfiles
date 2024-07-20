@@ -15,3 +15,5 @@ git:
     pager: delta --dark --paging=never
 os:
   edit: "nvim"
+
+promptToReturnFromSubprocess: false
