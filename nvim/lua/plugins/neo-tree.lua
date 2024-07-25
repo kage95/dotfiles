@@ -1,5 +1,9 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  enabled = true,
+  keys = {
+    { "<leader>ff", "<leader>fe", desc = "Explorer NeoTree (Root Dir)", remap = true },
+  },
   opts = {
     sources = { "filesystem", "buffers", "git_status", "document_symbols" },
     filesystem = {

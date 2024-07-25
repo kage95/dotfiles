@@ -5,6 +5,8 @@
 local keymap = vim.keymap
 local disable_keymap = vim.api.nvim_del_keymap
 
+keymap.set("n", "<leader>e", "<CMD>Telescope file_browser<CR>")
+
 keymap.set("n", "<Space>h", "^", { desc = "行頭に移動" })
 keymap.set("n", "<Space>l", "$", { desc = "行末に移動" })
 keymap.set("v", "v", "$h", { desc = "カーソル末まで選択" })

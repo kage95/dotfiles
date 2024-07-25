@@ -25,5 +25,10 @@ return {
         ".*%.svg",
       },
     },
+    extensions = {
+      fzf = {
+        fuzzy = true,
+      },
+    },
   },
 }
