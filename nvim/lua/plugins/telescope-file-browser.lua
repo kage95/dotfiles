@@ -1,6 +1,5 @@
 return {
   "nvim-telescope/telescope-file-browser.nvim",
-  dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
   config = function()
     local fb_actions = require("telescope").extensions.file_browser.actions
     require("telescope").setup({
@@ -19,6 +18,7 @@ return {
             ["n"] = {
               ["n"] = fb_actions.create,
               ["h"] = fb_actions.goto_parent_dir,
+              ["H"] = fb_actions.toggle_hidden,
               ["z"] = fb_actions.goto_cwd,
               ["l"] = "select_default",
             },

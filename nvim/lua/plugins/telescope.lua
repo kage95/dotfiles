@@ -1,9 +1,15 @@
 return {
   "nvim-telescope/telescope.nvim",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope-file-browser.nvim",
+    "nvim-telescope/telescope-fzf-native.nvim",
+  },
   opts = {
     defaults = {
       layout_strategy = "horizontal",
       sorting_strategy = "ascending",
+      winblend = 5,
       layout_config = {
         horizontal = {
           prompt_position = "top",
@@ -23,11 +29,6 @@ return {
         ".*%.bmp",
         ".*%.tiff",
         ".*%.svg",
-      },
-    },
-    extensions = {
-      fzf = {
-        fuzzy = true,
       },
     },
   },
