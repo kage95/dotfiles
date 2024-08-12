@@ -3,13 +3,15 @@ return {
   dependencies = {
     {
       "RRethy/nvim-treesitter-endwise",
-      config = function()
-        require("nvim-treesitter.configs").setup({
-          endwise = {
-            enable = true,
-          },
-        })
-      end,
+    },
+  },
+  opts = {
+    endwise = {
+      enable = true,
+    },
+    indent = {
+      enable = true,
+      disable = { "ruby" },
     },
   },
 }

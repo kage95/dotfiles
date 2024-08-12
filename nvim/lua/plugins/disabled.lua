@@ -8,7 +8,7 @@ return {
     enabled = false,
   },
   {
-    "lukas-reineke/indent-blankline.nvim",
+    "catppuccin/nvim",
     enabled = false,
   },
 }

@@ -31,5 +31,21 @@ return {
         ".*%.svg",
       },
     },
+    pickers = {
+      buffers = {
+        theme = "dropdown",
+        initial_mode = "normal",
+        previewer = false,
+        layout_config = {
+          width = 0.5,
+          height = 0.4,
+        },
+        mappings = {
+          n = {
+            ["d"] = require("telescope.actions").delete_buffer,
+          },
+        },
+      },
+    },
   },
 }

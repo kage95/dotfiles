@@ -11,7 +11,6 @@ return {
           grouped = true,
           display_stat = false,
           select_buffer = true,
-          respect_gitignore = true,
           hide_parent_dir = true,
           mappings = {
             ["i"] = {},
@@ -21,6 +20,7 @@ return {
               ["H"] = fb_actions.toggle_hidden,
               ["z"] = fb_actions.goto_cwd,
               ["l"] = "select_default",
+              ["I"] = fb_actions.toggle_respect_gitignore,
             },
           },
         },

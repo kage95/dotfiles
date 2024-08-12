@@ -40,7 +40,7 @@ return {
 
     return {
       completion = {
-        completeopt = "menu,menuone,noselect", -- menu,menuone,noselect
+        completeopt = "menu,menuone",
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
