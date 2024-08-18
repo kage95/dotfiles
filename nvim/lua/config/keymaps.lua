@@ -46,6 +46,7 @@ keymap.set("n", "<Leader>tf", "<CMD>TestFile<CR>", { desc = "Test File", silent 
 keymap.set("n", "<C-n>", "<CMD>BufferLineCycleNext<CR>", { desc = "次のbufferへ" })
 keymap.set("n", "<C-p>", "<CMD>BufferLineCyclePrev<CR>", { desc = "前のbufferへ" })
 keymap.set("n", "<Leader>bs", "<CMD>BufferLinePick<CR>", { desc = "bufferを選択" })
+keymap.set("n", "<leader>dd", LazyVim.ui.bufremove, { desc = "Delete Buffer" })
 keymap.set(
   "n",
   "<Leader>bS",

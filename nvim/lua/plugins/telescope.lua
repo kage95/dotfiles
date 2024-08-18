@@ -5,6 +5,13 @@ return {
     "nvim-telescope/telescope-file-browser.nvim",
     "nvim-telescope/telescope-fzf-native.nvim",
   },
+  keys = {
+    {
+      "<leader>,",
+      "<cmd>Telescope buffers<cr>",
+      desc = "Switch Buffer",
+    },
+  },
   opts = {
     defaults = {
       layout_strategy = "horizontal",
@@ -38,8 +45,12 @@ return {
         previewer = false,
         layout_config = {
           width = 0.5,
-          height = 0.4,
         },
+        path_display = {
+          "filename_first",
+        },
+        ignore_current_buffer = true,
+        prompt_position = "bottom",
         mappings = {
           n = {
             ["d"] = require("telescope.actions").delete_buffer,

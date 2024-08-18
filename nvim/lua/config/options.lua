@@ -3,5 +3,4 @@
 -- Add any additional options here
 
 local opt = vim.opt
-opt.clipboard:append("unnamedplus")
 opt.signcolumn = "no"
