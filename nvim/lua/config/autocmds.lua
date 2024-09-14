@@ -2,12 +2,6 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
--- Remove whitespace on save
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  command = ":%s/\\s\\+$//e",
-})
-
 vim.cmd([[
   highlight DiagnosticUnderlineInfo gui=undercurl guifg=transparent guibg=transparent guisp=#61afef
   highlight DiagnosticUnderlineError gui=undercurl guifg=transparent guibg=transparent guisp=#e06c75
@@ -18,4 +12,6 @@ vim.cmd([[
 
   highlight Search guifg=NONE guibg=#414858
   highlight IncSearch guifg=NONE guibg=#414858
+
+  highlight TreesitterContextBottom gui=underline guisp=Grey
 ]])

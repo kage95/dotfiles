@@ -13,6 +13,10 @@ return {
     },
     servers = {
       vtsls = {
+        on_attach = function(client, _bufnr)
+          client.server_capabilities.documentFormattingProvider = false
+          client.server_capabilities.inlayHintProvider = false
+        end,
         settings = {
           typescript = {
             inlayHints = {
@@ -27,8 +31,8 @@ return {
         },
       },
       ruby_lsp = {
-        mason = false,
-        cmd = { vim.fn.expand("~/.rbenv/shims/ruby-lsp") },
+        -- mason = false,
+        -- cmd = { vim.fn.expand("~/.rbenv/shims/ruby-lsp") },
         root_dir = require("lspconfig.util").root_pattern("Gemfile", ".git"),
         filetypes = { "ruby" },
         init_options = {
