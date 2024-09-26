@@ -42,13 +42,13 @@ blink_interval = 400
 blinking = "Always"
 
 [cursor.vi_mode_style]
-shape="Underline"
+shape = "Underline"
 
 # ============================================
 # FONT
 # ============================================
 [font]
-size = 15
+size = 14.5
 
 [font.offset]
 x = 0
@@ -72,6 +72,7 @@ hide_when_typing = true
 # ============================================
 [keyboard]
 bindings = [
+  { key = "N", mods = "Command", action="None" },
   { key = "Q", mods = "Command", action="None" },
   { key = "T", mods = "Command", action="None" },
   { key = "W", mods = "Command", action="None" },

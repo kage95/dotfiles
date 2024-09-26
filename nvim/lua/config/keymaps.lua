@@ -13,6 +13,16 @@ keymap.set("v", "v", "$h", { desc = "カーソル末まで選択" })
 
 keymap.set("n", "sv", "<C-W>v", { desc = "画面を縦分割" })
 
+keymap.set("n", "M", "%", { desc = "括弧ジャンプ" })
+keymap.set("x", "y", "mzy`z", { desc = "カーソル位置を保持してyank" })
+keymap.set("n", "zm", "za", { desc = "foldをトグル" })
+
+-- pとPを入れ替え
+keymap.set("x", "p", "P")
+keymap.set("x", "P", "p")
+keymap.set("n", "p", "]p`]")
+keymap.set("n", "P", "]P`]")
+
 -- esc
 keymap.set("i", "jj", "<Esc>", { desc = "ESC" })
 

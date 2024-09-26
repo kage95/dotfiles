@@ -1,33 +1,8 @@
-local cmp_kinds = {
-  Text = "  ",
-  Method = "  ",
-  Function = "  ",
-  Constructor = "  ",
-  Field = "  ",
-  Variable = "  ",
-  Class = "  ",
-  Interface = "  ",
-  Module = "  ",
-  Property = "  ",
-  Unit = "  ",
-  Value = "  ",
-  Enum = "  ",
-  Keyword = "  ",
-  Snippet = "  ",
-  Color = "  ",
-  File = "  ",
-  Reference = "  ",
-  Folder = "  ",
-  EnumMember = "  ",
-  Constant = "  ",
-  Struct = "  ",
-  Event = "  ",
-  Operator = "  ",
-  TypeParameter = "  ",
-}
-
 return {
   "hrsh7th/nvim-cmp",
+  dependencies = {
+    "onsails/lspkind.nvim",
+  },
   event = "InsertEnter",
   opts = function()
     local cmp = require("cmp")
@@ -45,24 +20,16 @@ return {
     end)
 
     return {
-      completion = {
-        completeopt = "menu,menuone,noselect",
-      },
       mapping = cmp.mapping.preset.insert({
-        ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-        ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
-            if #cmp.get_entries() == 1 then
-              cmp.confirm({ select = true })
-            else
-              cmp.select_next_item()
-            end
+            cmp.select_next_item()
+          elseif vim.snippet.active({ direction = 1 }) then
+            vim.schedule(function()
+              vim.snippet.jump(1)
+            end)
           elseif has_words_before() then
             cmp.complete()
-            if #cmp.get_entries() == 1 then
-              cmp.confirm({ select = true })
-            end
           else
             fallback()
           end
@@ -72,14 +39,23 @@ return {
         { name = "nvim_lsp" },
         { name = "path" },
       }, {
-        { name = "copilot" },
         { name = "buffer" },
       }),
+      window = {
+        completion = {
+          winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+          col_offset = -3,
+          side_padding = 0,
+        },
+      },
       formatting = {
-        format = function(_, vim_item)
-          vim_item.kind = (cmp_kinds[vim_item.kind] or "") .. vim_item.kind
-          vim_item.menu = ""
-          return vim_item
+        fields = { "kind", "abbr", "menu" },
+        format = function(entry, vim_item)
+          local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+          local strings = vim.split(kind.kind, "%s", { trimempty = true })
+          kind.kind = " " .. (strings[1] or "") .. " "
+
+          return kind
         end,
       },
       view = {
