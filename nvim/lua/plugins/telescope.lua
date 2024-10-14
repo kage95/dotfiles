@@ -35,17 +35,15 @@ return {
     },
     pickers = {
       buffers = {
-        theme = "dropdown",
+        theme = "ivy",
         initial_mode = "normal",
-        previewer = false,
         layout_config = {
-          width = 0.5,
+          height = 0.5,
         },
         path_display = {
           "filename_first",
         },
         ignore_current_buffer = true,
-        prompt_position = "bottom",
         mappings = {
           n = {
             ["d"] = require("telescope.actions").delete_buffer,

@@ -1,11 +1,9 @@
 local icons = LazyVim.config.icons
-local theme = require("onedarkpro").lualine
 
 return {
   "nvim-lualine/lualine.nvim",
   opts = {
     options = {
-      theme = "onedark",
       component_separators = { left = "|", right = "|" },
       section_separators = { left = "", right = "" },
     },

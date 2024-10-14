@@ -19,8 +19,9 @@ else
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.docker" },
     { import = "lazyvim.plugins.extras.linting.eslint" },
-    { import = "lazyvim.plugins.extras.lsp.none-ls" },
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
+    { import = "lazyvim.plugins.extras.lang.markdown" },
+    { import = "lazyvim.plugins.extras.lang.python" },
 
     -- import/override with your plugins
     { import = "plugins" },
@@ -38,7 +39,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "onedarkpro" } },
+  install = { colorscheme = { "kanagawa" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {

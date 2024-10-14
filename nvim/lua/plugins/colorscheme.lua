@@ -1,13 +1,23 @@
 return {
   {
     "olimorris/onedarkpro.nvim",
-    priority = 1000,
   },
-
+  {
+    "folke/tokyonight.nvim",
+    opts = { style = "night" },
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    opts = { style = "mocha" },
+  },
+  {
+    "rebelot/kanagawa.nvim",
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "onedark_vivid",
+      colorscheme = "kanagawa",
     },
   },
 }

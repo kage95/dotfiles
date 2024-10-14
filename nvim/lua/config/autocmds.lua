@@ -3,15 +3,17 @@
 -- Add any additional autocmds here
 
 vim.cmd([[
-  highlight DiagnosticUnderlineInfo gui=undercurl guifg=transparent guibg=transparent guisp=#61afef
-  highlight DiagnosticUnderlineError gui=undercurl guifg=transparent guibg=transparent guisp=#e06c75
-  highlight DiagnosticUnderlineWarn gui=undercurl guifg=transparent guibg=transparent guisp=#e5c07b
-  highlight DiagnosticUnderlineHint gui=undercurl guifg=transparent guibg=transparent guisp=#56b6c2
-
   highlight Visual guibg=#666C79
-
-  highlight Search guifg=NONE guibg=#414858
-  highlight IncSearch guifg=NONE guibg=#414858
-
-  highlight TreesitterContextBottom gui=underline guisp=Grey
 ]])
+
+local function augroup(name)
+  return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
+end
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("wrap_spell"),
+  pattern = { "markdown" },
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})
