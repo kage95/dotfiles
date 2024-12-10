@@ -7,11 +7,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
-local plugins
-if vim.g.vscode then
-  plugins = {}
-else
-  plugins = {
+require("lazy").setup({
+  spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
     -- import any extras modules here
@@ -22,14 +19,13 @@ else
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
     { import = "lazyvim.plugins.extras.lang.python" },
+    { import = "lazyvim.plugins.extras.test.core" },
+    { import = "lazyvim.plugins.extras.editor.dial" },
+    -- { import = "lazyvim.plugins.extras.coding.blink" },
 
     -- import/override with your plugins
     { import = "plugins" },
-  }
-end
-
-require("lazy").setup({
-  spec = plugins,
+  },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
     -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.

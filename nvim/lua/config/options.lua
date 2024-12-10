@@ -3,5 +3,5 @@
 -- Add any additional options here
 
 local opt = vim.opt
-opt.signcolumn = "yes"
 opt.scrolloff = 10
+opt.relativenumber = false

@@ -4,7 +4,7 @@ TERM = "alacritty"
 # ============================================
 # SHELL
 # ============================================
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 args = [
   "-l",
@@ -48,7 +48,7 @@ shape = "Underline"
 # FONT
 # ============================================
 [font]
-size = 14.5
+size = 15
 
 [font.offset]
 x = 0
@@ -59,7 +59,7 @@ x = 0
 y = 0
 
 [font.normal]
-family = "Hack Nerd Font"
+family = "HackGen35 Console NF"
 
 # ============================================
 # MOUSE
@@ -78,4 +78,6 @@ bindings = [
   { key = "W", mods = "Command", action="None" },
   { key = "V", mods = "Command", action="Paste" },
   { key = "Slash", mods = "Control", chars = "\u001f" },
+  { key = "9", mods = "Command", action="IncreaseFontSize" },
+  { key = "F", mods = "Command", action="ToggleFullscreen" },
 ]

@@ -1,6 +1,6 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
-  enabled = true,
+  enabled = false,
   config = function()
     require("ibl").setup({
       indent = {

@@ -20,7 +20,7 @@ return {
         settings = {
           typescript = {
             preferences = {
-              importModuleSpecifierPreference = "non-relative",
+              importModuleSpecifier = "non-relative",
             },
             inlayHints = {
               parameterNames = { enabled = false },
@@ -35,31 +35,8 @@ return {
       },
       ruby_lsp = {
         filetypes = { "ruby" },
-        init_options = {
-          enabledFeatures = {
-            "documentHighlight",
-            "documentSymbols",
-            "foldingRanges",
-            "findReferences",
-            "selectionRanges",
-            "semanticHighlighting",
-            "codeActions",
-            "diagnostics",
-            "definition",
-            "completion",
-            "completionResolve",
-            "inlayHint",
-            "codeLens",
-            "hover",
-            "documentLink",
-            "onTypeFormatting",
-            "workspaceSymbol",
-            "signatureHelp",
-            "references",
-            "renameSymbol",
-            "erbSupport",
-          },
-        },
+        mason = false,
+        cmd = { vim.fn.expand("~") .. "/.rbenv/shims/ruby-lsp" },
       },
     },
   },

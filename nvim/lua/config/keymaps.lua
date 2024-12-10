@@ -3,7 +3,6 @@
 -- Add any additional keymaps here
 
 local keymap = vim.keymap
-local disable_keymap = vim.api.nvim_del_keymap
 
 keymap.set("n", "<leader>e", "<CMD>Telescope file_browser<CR>")
 
@@ -13,7 +12,6 @@ keymap.set("v", "v", "$h", { desc = "カーソル末まで選択" })
 
 keymap.set("n", "sv", "<C-W>v", { desc = "画面を縦分割" })
 
-keymap.set("n", "M", "%", { desc = "括弧ジャンプ" })
 keymap.set("x", "y", "mzy`z", { desc = "カーソル位置を保持してyank" })
 keymap.set("n", "zm", "za", { desc = "foldをトグル" })
 
@@ -36,27 +34,17 @@ keymap.set("i", "<C-e>", "<C-o>$", { silent = true })
 
 keymap.set("i", ",", ",<Space>")
 
--- Terminal
--- デフォルトのterminalを開くコマンドを無効
-disable_keymap("n", "<leader>ft")
-disable_keymap("n", "<leader>fT")
-disable_keymap("n", "<C-_>")
-
-keymap.set("n", "<C-_>", "<CMD>ToggleTerm<CR>", { desc = "Open Terminal", silent = true })
-keymap.set("n", "<Leader>ts", "<CMD>TermSelect<CR>", { desc = "Select Terminal List", silent = true })
-keymap.set("n", "<Leader>tm", "<CMD>1ToggleTerm name=Main<CR>", { desc = "Main Terminal", silent = true })
-keymap.set("n", "<Leader>tt", "<CMD>2TermExec name=Test<CR>", { desc = "Test Terminal", silent = true })
-keymap.set("n", "<Leader>td", "<CMD>3ToggleTerm name=Debug<CR>", { desc = "Debug Terminal", silent = true })
-
--- Test
-keymap.set("n", "<Leader>tl", "<CMD>TestNearest<CR>", { desc = "Test Nearest", silent = true })
-keymap.set("n", "<Leader>tf", "<CMD>TestFile<CR>", { desc = "Test File", silent = true })
+keymap.set("i", "<C-g><C-u>", "<esc>gUiwgi")
+keymap.set("i", "<C-g><C-l>", "<esc>guiwgi")
+keymap.set("i", "<C-g><C-k>", "<esc>bgUlgi")
 
 -- Buffer
-keymap.set("n", "<C-n>", "<CMD>BufferLineCycleNext<CR>", { desc = "次のbufferへ" })
-keymap.set("n", "<C-p>", "<CMD>BufferLineCyclePrev<CR>", { desc = "前のbufferへ" })
-keymap.set("n", "<Leader>bs", "<CMD>BufferLinePick<CR>", { desc = "bufferを選択" })
-keymap.set("n", "<leader>dd", LazyVim.ui.bufremove, { desc = "Delete Buffer" })
+keymap.set("n", "<C-n>", "<CMD>BufferLineCycleNext<CR>", { desc = "BufferLineCycleNext" })
+keymap.set("n", "<C-p>", "<CMD>BufferLineCyclePrev<CR>", { desc = "BufferLineCyclePrev" })
+keymap.set("n", "<Leader>bs", "<CMD>BufferLinePick<CR>", { desc = "BufferLinePick" })
+keymap.set("n", "<leader>dd", function()
+  Snacks.bufdelete()
+end, { desc = "Delete Buffer" })
 keymap.set(
   "n",
   "<Leader>bS",
@@ -64,7 +52,6 @@ keymap.set(
   { desc = "ディレクトリでbufferを並び替え" }
 )
 
-disable_keymap("t", "<C-h>")
-disable_keymap("t", "<C-j>")
-disable_keymap("t", "<C-k>")
-disable_keymap("t", "<C-l>")
+keymap.set("n", "<Leader>cp", function()
+  vim.fn.setreg("*", vim.fn.expand("%"))
+end, { desc = "copy current file path" })

@@ -1,5 +1,6 @@
 return {
   "vim-test/vim-test",
+  enabled = false,
   config = function()
     -- Test Terminalで実行させる関数
     local function CustomStrategy(cmd)
