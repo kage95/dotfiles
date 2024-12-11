@@ -1,22 +1,9 @@
 return {
   "folke/snacks.nvim",
+  init = function()
+    vim.api.nvim_set_hl(0, "SnacksIndentChunk", { fg = "#806d9c" })
+  end,
   opts = {
-    statuscolumn = {
-      enabled = true,
-      folds = {
-        open = true,
-        git_hl = true,
-      },
-    },
-    terminal = {
-      win = {
-        position = "float",
-        border = "rounded",
-      },
-    },
-    lazygit = {
-      enabled = true,
-    },
     dashboard = {
       preset = {
         header = [[
@@ -46,6 +33,53 @@ return {
         },
         { section = "startup" },
       },
+    },
+    gitbrowse = {},
+    statuscolumn = {
+      enabled = true,
+      folds = {
+        open = true,
+        git_hl = true,
+      },
+    },
+    terminal = {
+      win = {
+        position = "float",
+        border = "rounded",
+      },
+    },
+    lazygit = {
+      enabled = true,
+    },
+    scroll = {
+      enabled = true,
+    },
+    indent = {
+      indent = {
+        char = "▏",
+      },
+      scope = {
+        enabled = false,
+      },
+      chunk = {
+        enabled = true,
+        char = {
+          corner_top = "╭",
+          corner_bottom = "╰",
+          horizontal = "─",
+          vertical = "│",
+          arrow = ">",
+        },
+      },
+    },
+  },
+  keys = {
+    {
+      "<leader>gL",
+      function()
+        Snacks.gitbrowse()
+      end,
+      desc = "Git Browse",
     },
   },
 }

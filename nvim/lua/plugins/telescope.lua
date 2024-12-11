@@ -42,7 +42,7 @@ return {
         path_display = {
           "filename_first",
         },
-        ignore_current_buffer = true,
+        ignore_current_buffer = false,
         mappings = {
           n = {
             ["d"] = require("telescope.actions").delete_buffer,
