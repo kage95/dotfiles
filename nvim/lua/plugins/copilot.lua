@@ -5,13 +5,12 @@ return {
   opts = {
     suggestion = {
       enabled = true,
-      auto_trigger = true,
+      auto_trigger = false,
       keymap = {
         accept = "<C-l>",
-        -- accept = "<Tab>",
         -- accept_word = false,
         -- accept_line = false,
-        -- next = "<C-]>",
+        next = "<C-]>",
         -- prev = false,
         -- dismiss = false,
       },

@@ -42,9 +42,6 @@ keymap.set("i", "<C-g><C-k>", "<esc>bgUlgi")
 keymap.set("n", "<C-n>", "<CMD>BufferLineCycleNext<CR>", { desc = "BufferLineCycleNext" })
 keymap.set("n", "<C-p>", "<CMD>BufferLineCyclePrev<CR>", { desc = "BufferLineCyclePrev" })
 keymap.set("n", "<Leader>bs", "<CMD>BufferLinePick<CR>", { desc = "BufferLinePick" })
-keymap.set("n", "<leader>dd", function()
-  Snacks.bufdelete()
-end, { desc = "Delete Buffer" })
 keymap.set(
   "n",
   "<Leader>bS",

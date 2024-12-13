@@ -52,7 +52,7 @@ return {
       enabled = true,
     },
     scroll = {
-      enabled = true,
+      enabled = not vim.g.vscode,
     },
     indent = {
       indent = {
@@ -80,6 +80,13 @@ return {
         Snacks.gitbrowse()
       end,
       desc = "Git Browse",
+    },
+    {
+      "<leader>dd",
+      function()
+        Snacks.bufdelete()
+      end,
+      desc = "Delete Buffer",
     },
   },
 }

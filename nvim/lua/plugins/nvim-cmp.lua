@@ -25,7 +25,7 @@ return {
 
     local cmp = require("cmp")
     local defaults = require("cmp.config.default")()
-    local auto_select = true
+    local auto_select = false
 
     cmp.event:on("menu_opened", function()
       vim.b.copilot_suggestion_hidden = true
@@ -43,6 +43,9 @@ return {
     return {
       auto_brackets = {},
       preselect = auto_select and cmp.PreselectMode.Item or cmp.PreselectMode.None,
+      completion = {
+        completeopt = "menu,menuone,noinsert" .. (auto_select and "" or ",noselect"),
+      },
       mapping = cmp.mapping.preset.insert({
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
