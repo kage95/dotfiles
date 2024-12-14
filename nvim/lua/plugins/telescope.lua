@@ -1,12 +1,5 @@
 return {
   "nvim-telescope/telescope.nvim",
-  keys = {
-    {
-      "<leader>,",
-      "<cmd>Telescope buffers<cr>",
-      desc = "Switch Buffer",
-    },
-  },
   opts = {
     defaults = {
       layout_strategy = "horizontal",

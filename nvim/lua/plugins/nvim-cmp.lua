@@ -4,6 +4,7 @@ return {
     "onsails/lspkind.nvim",
   },
   event = "InsertEnter",
+  enabled = false,
   opts = function()
     vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
     -- gray
