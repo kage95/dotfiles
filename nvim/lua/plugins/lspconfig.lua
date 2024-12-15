@@ -12,6 +12,7 @@ return {
       },
     },
     servers = {
+      -- vtsls
       vtsls = {
         on_attach = function(client, _bufnr)
           client.server_capabilities.documentFormattingProvider = false
@@ -33,10 +34,21 @@ return {
           },
         },
       },
+      -- ruby-lsp
       ruby_lsp = {
         filetypes = { "ruby" },
         mason = false,
         cmd = { vim.fn.expand("~") .. "/.rbenv/shims/ruby-lsp" },
+      },
+      -- gopls
+      gopls = {
+        settings = {
+          gopls = {
+            hints = {
+              assignVariableTypes = false,
+            },
+          },
+        },
       },
     },
   },

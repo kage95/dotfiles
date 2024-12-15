@@ -1,12 +1,16 @@
 return {
   "rmagatti/goto-preview",
-  -- event = "BufEnter",
+  event = "BufEnter",
   config = function()
-    vim.keymap.set("n", "gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true })
+    vim.keymap.set("n", "gp", function()
+      require("goto-preview").goto_preview_definition({})
+    end)
 
     require("goto-preview").setup({
       post_open_hook = function(buf, win)
-        vim.keymap.set("n", "q", "<cmd>lua require('goto-preview').close_all_win()<CR>", { buffer = buf })
+        vim.keymap.set("n", "q", function()
+          require("goto-preview").close_all_win()
+        end, { buffer = buf })
 
         vim.api.nvim_set_option_value("number", false, { win = win })
         vim.api.nvim_set_option_value("statuscolumn", "", { win = win })
