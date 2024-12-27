@@ -1,0 +1,8 @@
+command = "/opt/homebrew/bin/zsh -l -c /opt/homebrew/bin/tmux a -t main || /opt/homebrew/bin/tmux new -s main"
+
+font-size = 15
+font-family = "Hack Nerd Font Mono Regular"
+font-thicken = true
+cursor-style = block
+fullscreen = true
+mouse-hide-while-typing = true

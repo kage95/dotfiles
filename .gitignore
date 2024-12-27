@@ -20,5 +20,7 @@ karabiner/*
 lazygit/.*
 lazygit/state.yml
 
+!ghostty
+
 **/.gitignore
 !/.gitignore
