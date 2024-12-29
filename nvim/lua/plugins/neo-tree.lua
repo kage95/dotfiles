@@ -4,9 +4,9 @@ return {
   opts = {
     sources = { "filesystem", "buffers", "git_status", "document_symbols" },
     filesystem = {
-      bind_to_cwd = false,
-      follow_current_file = { enabled = true },
-      use_libuv_file_watcher = true,
+      follow_current_file = {
+        enabled = true,
+      },
     },
     window = {
       mappings = {
@@ -29,6 +29,14 @@ return {
         expander_collapsed = "",
         expander_expanded = "",
         expander_highlight = "NeoTreeExpander",
+      },
+    },
+    event_handlers = {
+      {
+        event = "file_open_requested",
+        handler = function()
+          require("neo-tree.command").execute({ action = "close" })
+        end,
       },
     },
   },

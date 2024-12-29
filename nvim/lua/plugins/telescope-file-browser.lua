@@ -1,6 +1,8 @@
 return {
   "nvim-telescope/telescope-file-browser.nvim",
   config = function()
+    vim.keymap.set("n", "<leader>e", "<CMD>Telescope file_browser<CR>")
+
     local fb_actions = require("telescope").extensions.file_browser.actions
     require("telescope").setup({
       extensions = {

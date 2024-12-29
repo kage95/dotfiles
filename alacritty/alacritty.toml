@@ -50,13 +50,6 @@ shape = "Underline"
 [font]
 size = 15
 
-[font.offset]
-x = 0
-y = 0
-
-[font.glyph_offset]
-x = 0
-y = 0
 
 [font.normal]
 family = "HackGen35 Console NF"
