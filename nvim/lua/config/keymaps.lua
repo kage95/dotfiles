@@ -31,10 +31,9 @@ keymap.set("i", "<C-a>", "<C-o>^", { silent = true })
 keymap.set("i", "<C-e>", "<C-o>$", { silent = true })
 
 keymap.set("i", ",", ",<Space>")
-
-keymap.set("i", "<C-g><C-u>", "<esc>gUiwgi")
-keymap.set("i", "<C-g><C-l>", "<esc>guiwgi")
-keymap.set("i", "<C-g><C-k>", "<esc>bgUlgi")
+keymap.set("i", "<C-g><C-u>", "<esc>gUiwgi", { desc = "全て大文字に" })
+keymap.set("i", "<C-g><C-l>", "<esc>guiwgi", { desc = "全て小文字に" })
+keymap.set("i", "<C-g><C-k>", "<esc>bgUlgi", { desc = "先頭だけ大文字に" })
 
 -- Buffer
 keymap.set("n", "<C-n>", "<CMD>BufferLineCycleNext<CR>", { desc = "BufferLineCycleNext" })
