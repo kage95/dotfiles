@@ -50,6 +50,16 @@ return {
     },
     lazygit = {
       enabled = true,
+      config = {
+        gui = {
+          windowSize = "normal",
+          nerdFontsVersion = "3",
+          border = "single",
+          sidePanelWidth = 0.25,
+          showCommandLog = false,
+          mainPanelSplitMode = "horizontal",
+        },
+      },
     },
     scroll = {
       enabled = not vim.g.vscode,

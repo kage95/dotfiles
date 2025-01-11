@@ -15,7 +15,9 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.linting.eslint" },
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
     { import = "lazyvim.plugins.extras.test.core" },
+
     { import = "lazyvim.plugins.extras.editor.dial" },
+    { import = "lazyvim.plugins.extras.editor.harpoon2" },
 
     -- lang
     { import = "lazyvim.plugins.extras.lang.typescript" },

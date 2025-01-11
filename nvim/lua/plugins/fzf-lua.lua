@@ -16,6 +16,7 @@ return {
     opts.actions = {
       buffers = {
         ["ctrl-d"] = { fn = actions.buf_del, reload = true },
+        ["enter"] = actions.file_edit_or_qf,
       },
     }
     opts.buffers = {
