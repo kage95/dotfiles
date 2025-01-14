@@ -49,3 +49,6 @@ keymap.set(
 keymap.set("n", "<Leader>cp", function()
   vim.fn.setreg("*", vim.fn.expand("%"))
 end, { desc = "copy current file path" })
+
+vim.keymap.set({ "n", "v" }, "<C-k>", "<cmd>Treewalker Up<cr>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<C-j>", "<cmd>Treewalker Down<cr>", { silent = true })
