@@ -1,6 +1,6 @@
 return {
   "nvim-telescope/telescope-file-browser.nvim",
-  enabled = false,
+  enabled = true,
   config = function()
     vim.keymap.set("n", "<leader>e", "<CMD>Telescope file_browser<CR>")
 

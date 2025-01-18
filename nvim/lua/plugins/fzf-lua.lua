@@ -1,13 +1,11 @@
 return {
   "ibhagwan/fzf-lua",
+  enabled = false,
   keys = {
     { "<leader><space>", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
   },
   opts = function(_, opts)
     local actions = require("fzf-lua.actions")
-
-    vim.api.nvim_set_hl(0, "FzfLuaTitle", { link = "TelescopeTitle" })
-    vim.api.nvim_set_hl(0, "FzfLuaBorder", { link = "TelescopeBorder" })
 
     opts.winopts = {
       width = 0.9,

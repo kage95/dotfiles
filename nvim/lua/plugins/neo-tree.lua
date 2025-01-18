@@ -1,6 +1,6 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  enabled = true,
+  enabled = false,
   opts = {
     sources = { "filesystem", "buffers", "git_status", "document_symbols" },
     filesystem = {
