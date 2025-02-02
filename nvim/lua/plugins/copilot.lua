@@ -12,7 +12,7 @@ return {
         -- accept_line = false,
         next = "<C-]>",
         -- prev = false,
-        -- dismiss = false,
+        dismiss = false,
       },
     },
     panel = {

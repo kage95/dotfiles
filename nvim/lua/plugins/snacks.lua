@@ -84,6 +84,9 @@ return {
         },
       },
     },
+    explorer = {
+      replace_netrw = false,
+    },
   },
   keys = {
     {
