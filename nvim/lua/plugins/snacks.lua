@@ -42,12 +42,7 @@ return {
         git_hl = true,
       },
     },
-    terminal = {
-      win = {
-        position = "float",
-        border = "rounded",
-      },
-    },
+    terminal = {},
     lazygit = {
       enabled = true,
       config = {
