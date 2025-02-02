@@ -9,6 +9,7 @@ return {
       show_close_icon = false,
       separator_style = "slope",
       sort_by = "directory",
+      truncate_names = false,
     }
     opts.highlights = {
       buffer_selected = {
