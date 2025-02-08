@@ -1,3 +1,7 @@
+vim.keymap.set("n", "<leader>so", function()
+  require("copilot.suggestion").toggle_auto_trigger()
+end, { desc = "toggle copilot suggestion" })
+
 return {
   "zbirenbaum/copilot.lua",
   cmd = "Copilot",
