@@ -8,8 +8,9 @@ return {
       show_buffer_close_icons = false,
       show_close_icon = false,
       separator_style = "slope",
-      sort_by = "directory",
+      -- sort_by = "directory",
       truncate_names = false,
+      max_name_length = 20,
     }
     opts.highlights = {
       buffer_selected = {

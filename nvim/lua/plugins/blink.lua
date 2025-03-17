@@ -3,7 +3,6 @@ return {
   opts = {
     completion = {
       list = {
-        max_items = 20,
         selection = {
           auto_insert = true,
           preselect = false,

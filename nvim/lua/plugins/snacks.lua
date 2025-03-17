@@ -34,7 +34,9 @@ return {
         { section = "startup" },
       },
     },
-    gitbrowse = {},
+    gitbrowse = {
+      what = "permalink",
+    },
     statuscolumn = {
       enabled = true,
       folds = {
@@ -89,6 +91,37 @@ return {
     },
   },
   keys = {
+    {
+      "<leader><space>",
+      function()
+        Snacks.picker.smart({
+          layout = {
+            layout = { width = 0.9, height = 0.9 },
+          },
+        })
+      end,
+      desc = "Smart Find Files",
+    },
+    {
+      "<leader>/",
+      function()
+        Snacks.picker.grep({
+          layout = {
+            layout = { width = 0.9, height = 0.9 },
+          },
+        })
+      end,
+      desc = "Grep",
+    },
+    {
+      "<leader>,",
+      function()
+        Snacks.picker.buffers({
+          layout = { preset = "select" },
+        })
+      end,
+      desc = "Buffers",
+    },
     {
       "<leader>gL",
       function()

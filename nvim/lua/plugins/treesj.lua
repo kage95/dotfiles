@@ -6,7 +6,7 @@ local array_settings = {
 
 return {
   "Wansmer/treesj",
-  keys = { "<space>m", "<space>j", "<space>s" },
+  keys = { "<space>m" },
   opts = {
     langs = {
       javascript = {
