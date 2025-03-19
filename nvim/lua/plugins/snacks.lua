@@ -139,7 +139,14 @@ return {
     {
       "<leader>e",
       function()
-        Snacks.picker.explorer()
+        Snacks.picker.explorer({
+          layout = {
+            preview = "main",
+            hidden = {
+              "preview",
+            },
+          },
+        })
       end,
       desc = "explorer",
     },
