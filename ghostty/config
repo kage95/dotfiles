@@ -12,6 +12,4 @@ background-opacity = "0.85"
 background-blur = true
 fullscreen = true
 macos-non-native-fullscreen = true
-macos-titlebar-style = hidden
-title = " "
 window-padding-balance = true
