@@ -11,5 +11,4 @@ mouse-hide-while-typing = true
 background-opacity = "0.85"
 background-blur = true
 fullscreen = true
-macos-non-native-fullscreen = true
 window-padding-balance = true
