@@ -45,6 +45,7 @@ return {
       },
     },
     terminal = {},
+    image = {},
     lazygit = {
       enabled = true,
       config = {
@@ -90,17 +91,18 @@ return {
       replace_netrw = false,
     },
   },
+  -- stylua: ignore
   keys = {
     {
       "<leader><space>",
       function()
-        Snacks.picker.smart({
+        Snacks.picker.files({
           layout = {
             layout = { width = 0.9, height = 0.9 },
           },
         })
       end,
-      desc = "Smart Find Files",
+      desc = "Find Files",
     },
     {
       "<leader>/",
@@ -137,18 +139,11 @@ return {
       desc = "Delete Buffer",
     },
     {
-      "<leader>e",
+      "<c-_>",
       function()
-        Snacks.picker.explorer({
-          layout = {
-            preview = "main",
-            hidden = {
-              "preview",
-            },
-          },
-        })
+        Snacks.terminal()
       end,
-      desc = "explorer",
+      desc = "Toggle Terminal",
     },
   },
 }
