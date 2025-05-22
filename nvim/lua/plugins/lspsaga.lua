@@ -1,4 +1,3 @@
-vim.keymap.set("n", "<Leader>gp", "<CMD>Lspsaga peek_definition<CR>", { desc = "peek definition" })
 return {
   "nvimdev/lspsaga.nvim",
   opts = {
@@ -6,7 +5,15 @@ return {
       enable = false,
     },
     definition = {
-      height = 0.3,
+      height = 0.4,
+      width = 0.7,
+    },
+  },
+  keys = {
+    {
+      "gp",
+      "<CMD>Lspsaga peek_definition<CR>",
+      desc = "peek definition",
     },
   },
 }

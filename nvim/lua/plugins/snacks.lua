@@ -47,7 +47,6 @@ return {
     terminal = {},
     image = {},
     lazygit = {
-      enabled = true,
       config = {
         gui = {
           windowSize = "normal",
@@ -91,12 +90,12 @@ return {
       replace_netrw = false,
     },
   },
-  -- stylua: ignore
   keys = {
     {
       "<leader><space>",
       function()
         Snacks.picker.files({
+          hidden = true,
           layout = {
             layout = { width = 0.9, height = 0.9 },
           },
@@ -119,17 +118,26 @@ return {
       "<leader>,",
       function()
         Snacks.picker.buffers({
-          layout = { preset = "select" },
+          sort_lastused = false,
+          layout = {
+            layout = {
+              backdrop = false,
+              width = 0.7,
+              min_width = 80,
+              height = 0.8,
+              min_height = 30,
+              box = "vertical",
+              border = "rounded",
+              title = "{title} {live} {flags}",
+              title_pos = "center",
+              { win = "input", height = 1, border = "bottom" },
+              { win = "list", border = "none" },
+              { win = "preview", title = "{preview}", height = 0.6, border = "top" },
+            },
+          },
         })
       end,
       desc = "Buffers",
-    },
-    {
-      "<leader>gL",
-      function()
-        Snacks.gitbrowse()
-      end,
-      desc = "Git Browse",
     },
     {
       "<leader>dd",
@@ -144,6 +152,15 @@ return {
         Snacks.terminal()
       end,
       desc = "Toggle Terminal",
+    },
+    {
+      "<leader>e",
+      function()
+        Snacks.explorer({
+          hidden = true,
+        })
+      end,
+      desc = "Explorer",
     },
   },
 }
