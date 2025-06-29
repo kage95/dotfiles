@@ -11,14 +11,26 @@ require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
-    -- import any extras modules here
+    -- linting
     { import = "lazyvim.plugins.extras.linting.eslint" },
+
+    -- formatting
+    { import = "lazyvim.plugins.extras.formatting.biome" },
+
+    -- ui
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
+
+    -- test
     { import = "lazyvim.plugins.extras.test.core" },
 
+    -- editor
     { import = "lazyvim.plugins.extras.editor.dial" },
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
     { import = "lazyvim.plugins.extras.editor.snacks_picker" },
+
+    -- coding
+    { import = "lazyvim.plugins.extras.coding.blink" },
+    { import = "lazyvim.plugins.extras.coding.luasnip" },
 
     -- lang
     { import = "lazyvim.plugins.extras.lang.typescript" },
@@ -28,8 +40,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.python" },
     { import = "lazyvim.plugins.extras.lang.go" },
 
-    { import = "lazyvim.plugins.extras.formatting.biome" },
-    { import = "lazyvim.plugins.extras.editor.snacks_picker" },
+    -- dap
+    { import = "lazyvim.plugins.extras.dap.core" },
 
     -- import/override with your plugins
     { import = "plugins" },

@@ -5,7 +5,7 @@ return {
       enable = false,
     },
     definition = {
-      height = 0.4,
+      height = 0.5,
       width = 0.7,
     },
   },

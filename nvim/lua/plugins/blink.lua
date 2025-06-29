@@ -1,6 +1,14 @@
 return {
   "saghen/blink.cmp",
   opts = {
+    -- sources = {
+    --   default = { "snippets", "lsp", "buffer", "path" },
+    --   providers = {
+    --     snippets = {
+    --       score_offset = 10,
+    --     },
+    --   },
+    -- },
     completion = {
       list = {
         max_items = 30,

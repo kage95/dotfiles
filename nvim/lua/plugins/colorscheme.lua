@@ -29,9 +29,16 @@ return {
     },
   },
   {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    opts = {
+      flavour = "Macchiato",
+    },
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa",
+      colorscheme = "catppuccin",
     },
   },
 }

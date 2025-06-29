@@ -156,9 +156,7 @@ return {
     {
       "<leader>e",
       function()
-        Snacks.explorer({
-          hidden = true,
-        })
+        Snacks.explorer()
       end,
       desc = "Explorer",
     },
