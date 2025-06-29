@@ -12,3 +12,4 @@ background-opacity = "0.85"
 background-blur = true
 fullscreen = true
 window-padding-balance = true
+theme = catppuccin-macchiato
