@@ -39,8 +39,9 @@ keymap.set("n", "<C-g><C-l>", "guiw", { desc = "全て小文字に" })
 keymap.set("n", "<C-g><C-k>", "bgUl", { desc = "先頭だけ大文字に" })
 
 -- Buffer
--- keymap.set("n", "<C-n>", "<CMD>BufferLineCycleNext<CR>", { desc = "BufferLineCycleNext" })
--- keymap.set("n", "<C-p>", "<CMD>BufferLineCyclePrev<CR>", { desc = "BufferLineCyclePrev" })
+keymap.set("n", "<C-n>", "<CMD>BufferLineCycleNext<CR>", { desc = "BufferLineCycleNext" })
+keymap.set("n", "<C-p>", "<CMD>BufferLineCyclePrev<CR>", { desc = "BufferLineCyclePrev" })
+keymap.set("n", "<Leader>bs", "<CMD>BufferLinePick<CR>", { desc = "BufferLinePick" })
 
 keymap.set("n", "<Leader>cp", function()
   vim.fn.setreg("*", vim.fn.expand("%"))
