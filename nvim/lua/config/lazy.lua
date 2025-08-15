@@ -31,6 +31,7 @@ require("lazy").setup({
     -- coding
     { import = "lazyvim.plugins.extras.coding.blink" },
     { import = "lazyvim.plugins.extras.coding.luasnip" },
+    { import = "lazyvim.plugins.extras.coding.mini-surround" },
 
     -- lang
     { import = "lazyvim.plugins.extras.lang.typescript" },
