@@ -1,5 +1,5 @@
 gui:
-  windowSize: "normal"
+  screenMode: "normal"
   nerdFontsVersion: 3
   border: "single"
   sidePanelWidth: 0.3
@@ -16,5 +16,4 @@ git:
     pager: delta --dark --paging=never
 os:
   edit: "nvim"
-
 promptToReturnFromSubprocess: false
