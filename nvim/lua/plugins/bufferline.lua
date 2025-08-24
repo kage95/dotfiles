@@ -9,4 +9,21 @@ return {
       tab_size = 10,
     }
   end,
+  keys = {
+    {
+      "<C-n>",
+      "<CMD>BufferLineCycleNext<CR>",
+      { desc = "BufferLineCycleNext" },
+    },
+    {
+      "<C-p>",
+      "<CMD>BufferLineCyclePrev<CR>",
+      { desc = "BufferLineCyclePrev" },
+    },
+    {
+      "<Leader>bs",
+      "<CMD>BufferLinePick<CR>",
+      { desc = "BufferLinePick" },
+    },
+  },
 }

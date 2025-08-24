@@ -5,6 +5,7 @@ return {
     "echasnovski/mini.icons",
   },
   opts = {
+    anti_conceal = { enabled = false },
     heading = {
       enabled = true,
       sign = false,
