@@ -15,5 +15,7 @@ git:
     colorArg: always
     pager: delta --dark --paging=never
 os:
-  edit: "nvim"
+  open: "open {{filename}}"
+  editPreset: "nvim-remote"
 promptToReturnFromSubprocess: false
+notARepository: "quit"

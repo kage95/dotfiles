@@ -8,7 +8,7 @@ return {
       list = {
         max_items = 30,
         selection = {
-          auto_insert = true,
+          auto_insert = false,
           preselect = true,
         },
       },
