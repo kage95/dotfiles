@@ -6,8 +6,17 @@ local array_settings = {
 
 return {
   "Wansmer/treesj",
-  keys = { "<space>m" },
+  keys = {
+    {
+      "<space>m",
+      function()
+        require("treesj").toggle()
+      end,
+      { desc = "TSJToggle" },
+    },
+  },
   opts = {
+    use_default_keymaps = false,
     langs = {
       javascript = {
         array = array_settings,

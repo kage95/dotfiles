@@ -39,11 +39,17 @@ return {
         filetypes = { "ruby" },
         mason = false,
         cmd = { vim.fn.expand("~") .. "/.rbenv/shims/ruby-lsp" },
+        init_options = {
+          formatter = "standard",
+          linters = { "standard" },
+        },
       },
       -- gopls
       gopls = {
+        mason = false,
         settings = {
           gopls = {
+            staticcheck = true,
             hints = {
               assignVariableTypes = false,
               compositeLiteralFields = false,
@@ -55,6 +61,10 @@ return {
             },
           },
         },
+      },
+      golangci_lint_ls = {
+        mason = false,
+        root_markers = { "git", "go.mod", "go.work" },
       },
     },
   },

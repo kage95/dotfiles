@@ -54,7 +54,7 @@ return {
         char = "▏",
       },
       scope = {
-        enabled = false,
+        enabled = true,
       },
       chunk = {
         enabled = true,
