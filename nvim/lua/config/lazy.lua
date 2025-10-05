@@ -25,12 +25,9 @@ require("lazy").setup({
 
     -- editor
     { import = "lazyvim.plugins.extras.editor.dial" },
-    { import = "lazyvim.plugins.extras.editor.harpoon2" },
-    { import = "lazyvim.plugins.extras.editor.snacks_picker" },
 
     -- coding
     { import = "lazyvim.plugins.extras.coding.luasnip" },
-    { import = "lazyvim.plugins.extras.coding.mini-surround" },
 
     -- lang
     { import = "lazyvim.plugins.extras.lang.typescript" },

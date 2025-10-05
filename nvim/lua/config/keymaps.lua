@@ -4,11 +4,11 @@
 
 local keymap = vim.keymap
 
-keymap.set("n", "<Space>a", "^", { desc = "行頭に移動" })
-keymap.set("n", "<Space>l", "$", { desc = "行末に移動" })
+keymap.set("n", "<leader>a", "^", { desc = "行頭に移動" })
+keymap.set("n", "<leader>l", "$", { desc = "行末に移動" })
 keymap.set("v", "v", "$h", { desc = "カーソル末まで選択" })
 
-keymap.set("n", "<Space>sv", "<C-W>v", { desc = "画面を縦分割" })
+keymap.set("n", "<C-s><C-v>", "<C-W>v", { desc = "画面を縦分割" })
 
 keymap.set("x", "y", "mzy`z", { desc = "カーソル位置を保持してyank" })
 keymap.set("n", "zm", "za", { desc = "foldをトグル" })

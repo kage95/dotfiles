@@ -5,3 +5,4 @@
 local opt = vim.opt
 opt.scrolloff = 10
 opt.relativenumber = false
+vim.g.lazyvim_picker = "snacks"

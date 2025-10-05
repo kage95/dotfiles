@@ -78,75 +78,55 @@ return {
       replace_netrw = false,
     },
   },
-  keys = {
-    {
-      "<leader><space>",
-      function()
-        Snacks.picker.files({
-          hidden = true,
-          layout = {
-            layout = { width = 0.9, height = 0.9 },
-          },
-        })
-      end,
-      desc = "Find Files",
-    },
-    {
-      "<leader>/",
-      function()
-        Snacks.picker.grep({
-          layout = {
-            layout = { width = 0.9, height = 0.9 },
-          },
-        })
-      end,
-      desc = "Grep",
-    },
-    {
-      "<leader>,",
-      function()
-        Snacks.picker.buffers({
-          sort_lastused = false,
-          layout = {
+  keys = function()
+    -- stylua: ignore
+    return {
+      { "<leader>dd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
+      { "<c-_>", function() Snacks.terminal() end, desc = "Toggle Terminal" },
+      { "<leader>e", function() Snacks.explorer() end, desc = "Explorer" },
+      { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
+      { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
+      { "<leader>sR", function() Snacks.picker.resume() end, desc = "Resume" },
+      { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
+      { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+      { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse", mode = { "n", "v" } },
+      { "<leader>.", function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
+      { "<leader>S",  function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
+      {
+        "<leader><space>",
+        function() Snacks.picker.files({ hidden = true, layout = { layout = { width = 0.9, height = 0.9 } } }) end,
+        desc = "Find Files",
+      },
+      {
+        "<leader>/",
+        function() Snacks.picker.grep({ layout = { layout = { width = 0.9, height = 0.9 } } }) end,
+        desc = "Grep",
+      },
+      {
+        "<leader>,",
+        function()
+          Snacks.picker.buffers({
+            sort_lastused = false,
             layout = {
-              backdrop = false,
-              width = 0.7,
-              min_width = 80,
-              height = 0.8,
-              min_height = 30,
-              box = "vertical",
-              border = "rounded",
-              title = "{title} {live} {flags}",
-              title_pos = "center",
-              { win = "input", height = 1, border = "bottom" },
-              { win = "list", border = "none" },
-              { win = "preview", title = "{preview}", height = 0.6, border = "top" },
+              layout = {
+                backdrop = false,
+                width = 0.7,
+                min_width = 80,
+                height = 0.8,
+                min_height = 30,
+                box = "vertical",
+                border = "rounded",
+                title = "{title} {live} {flags}",
+                title_pos = "center",
+                { win = "input", height = 1, border = "bottom" },
+                { win = "list", border = "none" },
+                { win = "preview", title = "{preview}", height = 0.6, border = "top" },
+              },
             },
-          },
-        })
-      end,
-      desc = "Buffers",
-    },
-    {
-      "<leader>dd",
-      function()
-        Snacks.bufdelete()
-      end,
-      desc = "Delete Buffer",
-    },
-    {
-      "<c-_>",
-      function()
-        Snacks.terminal()
-      end,
-      desc = "Toggle Terminal",
-    },
-    {
-      "<leader>e",
-      function()
-        Snacks.explorer()
-      end,
-      desc = "Explorer",
-    },
-  },
+          })
+        end,
+        desc = "Buffers",
+      },
+    }
+  end,
 }
